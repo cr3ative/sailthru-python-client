@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import platform
-import requests
+try:
+    from botocore.vendored import requests
+except ImportError:
+    import requests
 from .sailthru_error import SailthruClientError
 from .sailthru_response import SailthruResponse
 
